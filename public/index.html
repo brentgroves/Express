@@ -28,8 +28,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script type="text/javascript">
       // Set up socket.io
-      const socket = io('http://ec2-3-15-17-45.us-east-2.compute.amazonaws.com:3030');
-      <!-- const socket = io('http://localhost:3030'); -->
+      <!--const socket = io('http://ec2-3-15-17-45.us-east-2.compute.amazonaws.com:3030'); -->
+      const socket = io('http://localhost:3030'); 
       // Initialize a Feathers app
       const app = feathers();
       // Register socket.io to talk to our server
