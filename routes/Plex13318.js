@@ -5,10 +5,10 @@ const config = require('../../Config13318/config.json');
 
 router.get('/', function(req, res, next) {
   const data = {
-    KepSock13318URI: config.KepSock13318URI,
+    BPGServicesURI: config.BPGServicesURI,
   };
 
-  res.render('KepSock13318', data);
+  res.render('Plex13318', data);
 });
 
 module.exports = router;

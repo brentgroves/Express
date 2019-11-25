@@ -38,7 +38,7 @@
       async function sendMessage() {
         const messageInput = document.getElementById('message-text');
         // Create a new message with the input field value
-        await app.service('Kep13318').create({
+        await app.service('Plex13318').create({
           text: messageInput.value,
         });
         messageInput.value = '';
@@ -49,11 +49,11 @@
       }
       const main = async () => {
         // Find all existing messages
-        const kep13318Msg = await app.service('Kep13318').find();
+        const Plex13318Msg = await app.service('Plex13318').find();
         // Add existing messages to the list
-        kep13318Msg.forEach(addMessage);
+        Plex13318Msg.forEach(addMessage);
         // Add any newly created message to the list in real-time
-        app.service('Kep13318').on('created', addMessage);
+        app.service('Plex13318').on('created', addMessage);
       };
       main();
     </script>

@@ -18,7 +18,7 @@
       <form class="form" onsubmit="sendMessage(event.preventDefault())">
         <input type="text" id="message-text" placeholder="Enter message here" />
         <button type="submit" class="button button-primary">
-          {{WebSocket}}
+          {{BPGServicesURI}}
         </button>
       </form>
 
@@ -28,7 +28,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <script type="text/javascript">
       // Set up socket.io
-      const socket = io('{{{KepSock13318URI}}}'); 
+      const socket = io('{{{BPGServicesURI}}}'); 
       <!--const socket = io('http://localhost:3030');  -->
       // Initialize a Feathers app
       const app = feathers();
@@ -38,7 +38,7 @@
       async function sendMessage() {
         const messageInput = document.getElementById('message-text');
         // Create a new message with the input field value
-        await app.service('messages').create({
+        await app.service('Kep13318').create({
           text: messageInput.value,
         });
         messageInput.value = '';
@@ -49,11 +49,11 @@
       }
       const main = async () => {
         // Find all existing messages
-        const messages = await app.service('messages').find();
+        const kep13318Msg = await app.service('Kep13318').find();
         // Add existing messages to the list
-        messages.forEach(addMessage);
+        kep13318Msg.forEach(addMessage);
         // Add any newly created message to the list in real-time
-        app.service('messages').on('created', addMessage);
+        app.service('Kep13318').on('created', addMessage);
       };
       main();
     </script>

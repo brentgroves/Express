@@ -10,7 +10,8 @@ var mustacheExpress = require('mustache-express');
 // var router = express.Router();
 //https://expressjs.com/en/starter/generator.html
 var indexRouter = require('./routes/index');
-var KepSock13318Router = require('./routes/KepSock13318');
+var Kep13318Router = require('./routes/Kep13318');
+var Plex13318Router = require('./routes/Plex13318');
 // var usersRouter = require('./routes/users');
 //var chatRouter = require('./routes/chat');
 
@@ -41,7 +42,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/KepSock13318', KepSock13318Router);
+app.use('/Kep13318', Kep13318Router);
+app.use('/Plex13318', Plex13318Router);
 
 // app.use('/users', usersRouter);
 //app.use('/chat',chatRouter);
